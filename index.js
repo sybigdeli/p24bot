@@ -18,18 +18,8 @@ bot.start((ctx) => {
     .reply(
       `سلام! به بات پشتیبانی پذیرش ۲۴ خوش اومدید! 😊`,
       Markup.inlineKeyboard([
-        [
-          Markup.button.callback(
-            "📌 سوالات مربوط به فعالسازی ویزیت آنلاین",
-            "office_false"
-          ),
-        ],
-        [
-          Markup.button.callback(
-            "🏥 سوالات مربوط به فعالسازی مطب",
-            "office_true"
-          ),
-        ],
+        [Markup.button.callback("📌 پشتیبانی ویزیت آنلاین", "office_false")],
+        [Markup.button.callback("🏥پشتیبانی مطب", "office_true")],
       ])
     )
     .then((sentMessage) => saveMessageId(ctx, sentMessage));
@@ -42,7 +32,7 @@ bot.action("office_false", (ctx) => {
     ctx.chat.id,
     messageStore[ctx.chat.id],
     null,
-    `📌 سوالات مربوط به فعالسازی ویزیت آنلاین:`,
+    `📌 سوالات متداول ویزیت آنلاین:`,
     Markup.inlineKeyboard([
       [
         Markup.button.callback(
@@ -86,6 +76,7 @@ bot.action("office_false", (ctx) => {
           "activation_online_visit_ads"
         ),
       ],
+      [Markup.button.url("💬 گفتگو با پشتیبان", "https://t.me/sybigdeli")],
       [Markup.button.callback("🔙 بازگشت", "go_back_main")],
     ])
   );
@@ -98,7 +89,7 @@ bot.action("office_true", (ctx) => {
     ctx.chat.id,
     messageStore[ctx.chat.id],
     null,
-    `🏥 سوالات مربوط به فعالسازی مطب:`,
+    `🏥 سوالات متداول مطب:`,
     Markup.inlineKeyboard([
       [
         Markup.button.callback(
@@ -124,6 +115,7 @@ bot.action("office_true", (ctx) => {
           "activation_office_ads"
         ),
       ],
+      [Markup.button.url("💬 گفتگو با پشتیبان", "https://t.me/sybigdeli")],
       [Markup.button.callback("🔙 بازگشت", "go_back_main")],
     ])
   );
