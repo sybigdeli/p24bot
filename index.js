@@ -1,6 +1,7 @@
 const { Telegraf, Markup } = require("telegraf");
+require("dotenv").config();
 
-const BOT_TOKEN = "8006429819:AAGS-F41dKninACUt63UseZeQnnmtyvVF5g";
+const BOT_TOKEN = process.env.BOT_TOKEN;
 const bot = new Telegraf(BOT_TOKEN);
 
 // برای ذخیره message_id مربوط به پیام کاربر
